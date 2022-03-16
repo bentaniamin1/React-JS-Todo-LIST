@@ -15,7 +15,7 @@ function App() {
       id: 1,
       titre: 'fdfddsfsaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
       tache: 'fdfddsfgfffffs',
-      complete: true
+      complete: "true/false"
     },
     {
       id: 3,
@@ -27,26 +27,8 @@ function App() {
       id: 10,
       titre: 'fdfddsfs',
       tache: 'fdfddsfgfffffs',
-      complete: false
-    },
-    {
-      id: 11,
-      titre: 'fdfddsfs',
-      tache: 'fdfddsfgfffffs',
-      complete: false
-    },
-    {
-      id: 12,
-      titre: 'fdfddsfs',
-      tache: 'fdfddsfgfffffs',
       complete: true
-    },
-    {
-      id:2,
-      titre: 'fdfddsddddddddddddddfsTrue',
-      tache: 'fdfddsfgfffffs',
-      complete: true
-    },
+    }
     
   ]);
 
