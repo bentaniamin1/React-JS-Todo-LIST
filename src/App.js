@@ -138,12 +138,12 @@ function App() {
   return (
     <div className="container my-3">
       <FormTache setCards={setCards}/>
-      <h1>Pas commencé</h1>
+      <h1>à faire</h1>
       <TodoListStart todos={cards} deleteTodo={deleteTodo} removeTodo={removeTodo} tacheFini={tacheFini} statue={completed} changeStatusTodo={changeStatusTodo} />
 
         <h1>En cours</h1>
         <TodoList todos={cards} deleteTodo={deleteTodo} removeTodo={removeTodo} tacheFini={tacheFini} statue={completed} changeStatusTodo={changeStatusTodo} changeStatusTodoStart={changeStatusTodoStart} />
-        <h1>Finiiiiii</h1>
+        <h1>Fini</h1>
         <TodoListFini todos={cards} deleteTodo={deleteTodo} removeTodo={removeTodo} tacheFini={tacheFini} changeStatusTodoFalse={changeStatusTodoFalse} changeStatusTodoStart={changeStatusTodoStart} />
         
     </div>
