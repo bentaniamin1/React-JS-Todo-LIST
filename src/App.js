@@ -5,6 +5,7 @@ import React, {useState} from 'react';
 import FormTache from './FormTache';
 import TodoList from './components/TodoList';
 import TodoListFini from './components/TodoListFini';
+import TodoListStart from './components/TodoListStart';
 
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
 
     {
       id: 1,
-      titre: 'fdfddsfs',
+      titre: 'fdfddsfsaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
       tache: 'fdfddsfgfffffs',
       complete: true
     },
@@ -87,13 +88,57 @@ function App() {
   }
 
   function changeStatusTodo(id) {
-    setCards(cards.filter(card=> card.id !== id));
-    cards.complete=true;
+    setCards(
+      cards.filter(card=> card.id !== id));
+    
+      setCards(
+        cards.map( card => {
+          if(card.id ===id) {
+            card.complete = true
+            return {
+              ...card,
+            };
+          }
+          return card;
+        })
+      )
   }
 
-  function removeTodo1(id) {
-    setCardsItems(newCardsItems1.filter(card=> card.id !== id));
+  function changeStatusTodoStart(id) {
+    setCards(
+      cards.filter(card=> card.id !== id));
+    
+      setCards(
+        cards.map( card => {
+          if(card.id ===id) {
+            card.complete = "true/false"
+            return {
+              ...card,
+            };
+          }
+          return card;
+        })
+      )
   }
+
+  function changeStatusTodoFalse(id) {
+    setCards(
+      cards.filter(card=> card.id !== id));
+    
+      setCards(
+        cards.map( card => {
+          if(card.id ===id) {
+            card.complete = false
+            return {
+              ...card,
+            };
+          }
+          return card;
+        })
+      )
+  }
+
+  
 
   // function uptadeTodo(id) {
   //   const newCardsItems = [...cards];
@@ -111,10 +156,13 @@ function App() {
   return (
     <div className="container my-3">
       <FormTache setCards={setCards}/>
+      <h1>Pas commencé</h1>
+      <TodoListStart todos={cards} deleteTodo={deleteTodo} removeTodo={removeTodo} tacheFini={tacheFini} statue={completed} changeStatusTodo={changeStatusTodo} />
+
         <h1>En cours</h1>
-        <TodoList todos={cards} deleteTodo={deleteTodo} removeTodo={removeTodo} tacheFini={tacheFini} statue={completed} changeStatusTodo={changeStatusTodo} />
+        <TodoList todos={cards} deleteTodo={deleteTodo} removeTodo={removeTodo} tacheFini={tacheFini} statue={completed} changeStatusTodo={changeStatusTodo} changeStatusTodoStart={changeStatusTodoStart} />
         <h1>Finiiiiii</h1>
-        <TodoListFini todos={newCardsItems1} deleteTodo={deleteTodo} removeTodo1={removeTodo1} tacheFini={tacheFini} />
+        <TodoListFini todos={cards} deleteTodo={deleteTodo} removeTodo={removeTodo} tacheFini={tacheFini} changeStatusTodoFalse={changeStatusTodoFalse} changeStatusTodoStart={changeStatusTodoStart} />
         
     </div>
 

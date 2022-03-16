@@ -30,8 +30,9 @@ export default class FormTache extends React.Component {
       id: uuid(),
       titre: this.state.title,
       tache: this.state.content,
-      complete: false
+      complete: "true/false",
     };
+    console.log(newItem);
 
     this.setCards(prev => [...prev, newItem]);
   };

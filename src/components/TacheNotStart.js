@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Todo({todo, titre, complete, tache, deleteTodo, removeTodo, uptadeTodo, tacheFini, statue, changeStatusTodo, changeStatusTodoStart}) {
+export default function TodoNotStart({todo, titre, complete, tache, deleteTodo, removeTodo, uptadeTodo, tacheFini, statue, changeStatusTodo, changeStatusTodoFalse}) {
     function handleButtonDelete() {
         deleteTodo(todo.id);
     }
@@ -20,17 +20,17 @@ export default function Todo({todo, titre, complete, tache, deleteTodo, removeTo
         changeStatusTodo(todo.id);
     }
 
-    function handlechangeStatusTodoStartClick() {
-        changeStatusTodoStart(todo.id);
+    function handlechangeStatusTodoFalseClick() {
+        changeStatusTodoFalse(todo.id);
     }
     return(
 
         <div className=" col">
         <div className="card-body">
         <input type="checkbox"onClick={handlechangeStatusTodoClick} id="checkbox"></input>
-        <label for='checkbox'> mettre en fini</label><br></br>
-        <input type="checkbox"onClick={handlechangeStatusTodoStartClick} id='checkbox'></input>
-        <label for='checkbox'> mettre en pas commencé</label>
+        <label for='checkbox'> mettre en fini</label> <br></br>
+        <input type="checkbox"onClick={handlechangeStatusTodoClick} id="checkbox"></input>
+        <label for='checkbox'> mettre en cours</label>
             <h5 className="card-title">{titre}</h5>
             <p className="card-text">{tache}</p>
             <button onClick={handleRemoveClick}  className="hoverBtnDelete btn btn-warning">Supprimer</button>

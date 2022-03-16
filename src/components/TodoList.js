@@ -1,11 +1,11 @@
 import React from "react";
 import Todo from "./Tache";
 
-export default function TodoList({todos , deleteTodo, removeTodo, uptadeTodo, tacheFini, changeStatusTodo}) {
+export default function TodoList({todos , deleteTodo, removeTodo, uptadeTodo, tacheFini, changeStatusTodo, changeStatusTodoStart}) {
     return (
         <div className="row">
             {todos.filter(e => e.complete === false).map(todo => (
-                <Todo key={todo.id} todo={todo} titre={todo.titre} tache={todo.tache} deleteTodo={deleteTodo} removeTodo={removeTodo} uptadeTodo={uptadeTodo} tacheFini={tacheFini} changeStatusTodo={changeStatusTodo} />
+                <Todo key={todo.id} todo={todo} titre={todo.titre} tache={todo.tache} deleteTodo={deleteTodo} removeTodo={removeTodo} uptadeTodo={uptadeTodo} tacheFini={tacheFini} changeStatusTodo={changeStatusTodo} changeStatusTodoStart={changeStatusTodoStart} />
             ))}
 
         </div>
