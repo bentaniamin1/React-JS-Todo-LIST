@@ -5,7 +5,7 @@ export default function TodoListFini({todos , deleteTodo, removeTodo, uptadeTodo
     return (
         <div className="row">
             {todos.filter(e => e.complete === true).map(todo => (
-                <TodoFini key={todo.id} todo={todo} titre={todo.titre} tache={todo.tache} complete={todo.complete}  deleteTodo={deleteTodo} removeTodo1={removeTodo} uptadeTodo={uptadeTodo} tacheFini={tacheFini} changeStatusTodoFalse={changeStatusTodoFalse} changeStatusTodoStart={changeStatusTodoStart}  />
+                <TodoFini key={todo.id} todo={todo} titre={todo.titre} tache={todo.tache} complete={todo.complete}  deleteTodo={deleteTodo} removeTodo={removeTodo} uptadeTodo={uptadeTodo} tacheFini={tacheFini} changeStatusTodoFalse={changeStatusTodoFalse} changeStatusTodoStart={changeStatusTodoStart}  />
             ))}
 
         </div>
