@@ -64,7 +64,7 @@ function App() {
     );
 
   }
-
+  // Suppresion des tâches
   function removeTodo(id) {
     setCards(cards.filter(card=> card.id !== id));
   }
@@ -85,7 +85,7 @@ function App() {
         })
       )
   }
-
+  // change status des tâches à faire
   function changeStatusTodoStart(id) {
     setCards(
       cards.filter(card=> card.id !== id));
@@ -102,7 +102,7 @@ function App() {
         })
       )
   }
-
+  //Change status
   function changeStatusTodoFalse(id) {
     setCards(
       cards.filter(card=> card.id !== id));

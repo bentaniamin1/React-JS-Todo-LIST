@@ -4,7 +4,7 @@ export default function TodoListFini({todo, titre, tache, deleteTodo, removeTodo
     function handleButtonDelete() {
         deleteTodo(todo.id);
     }
-
+    //suppresion
     function handleRemoveClick() {
         removeTodo(todo.id);
     }
@@ -16,10 +16,12 @@ export default function TodoListFini({todo, titre, tache, deleteTodo, removeTodo
     function handleTacheFiniClick() {
         tacheFini(todo.id);
     }
+
+    //Change status du click en cours
     function handlechangeStatusTodoFalseClick() {
         changeStatusTodoFalse(todo.id);
     }
-
+    //Change status du click à faire
     function handlechangeStatusTodoStartClick() {
         changeStatusTodoStart(todo.id);
     }
