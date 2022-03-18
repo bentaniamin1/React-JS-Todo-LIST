@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 export default function Todo({todo, titre, complete, tache, deleteTodo, removeTodo, uptadeTodo, tacheFini, statue, changeStatusTodo, changeStatusTodoStart}) {
+    
     function handleButtonDelete() {
         deleteTodo(todo.id);
     }

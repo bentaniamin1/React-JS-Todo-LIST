@@ -46,7 +46,6 @@ function App() {
 
   }
   const [newCardsItems1, setCardsItems] = useState([...cards])
-
   function tacheFini(index,id) {
     const newCardsItems1 = [...cards];
     // eslint-disable-next-line no-unused-expressions
@@ -132,12 +131,11 @@ function App() {
   // }
 
   
-
   
   const completed = true;
   return (
     <div className="container my-3">
-      <FormTache setCards={setCards}/>
+      <FormTache setCards={setCards} cards={cards}/>
       <h1>à faire</h1>
       <TodoListStart todos={cards} deleteTodo={deleteTodo} removeTodo={removeTodo} tacheFini={tacheFini} statue={completed} changeStatusTodo={changeStatusTodo} changeStatusTodoFalse={changeStatusTodoFalse} />
 

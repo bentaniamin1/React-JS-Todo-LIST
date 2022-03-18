@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { v4 as uuid } from 'uuid';
 
 export default class FormTache extends React.Component {
@@ -6,14 +6,29 @@ export default class FormTache extends React.Component {
   //Formulaire
   constructor(props) {
     super(props);
-
+    
     this.state = {
       title: '',
       content: '',
-
+      cardsItemsCount: 0,
+      
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.removeItem = this.removeItem.bind(this);
+  }
+
+  componentDidMount(){
+    // this.setState({cardsItemsCount : this.state.cardsItemsCount ++}) 
+
+  }
+
+  componentDidUpdate() {
+    document.title = `${this.state.cardsItemsCount} tâches crée à faire`
+    if(this.state.cardsItemsCount === 4) {
+      document.title = `${this.state.cardsItemsCount} numero`;
+      alert("Il y a trop de tache à faire encore, veuillez finir les tâches ")
+
+    }
   }
 
   getTitle = (e) => {
@@ -26,15 +41,17 @@ export default class FormTache extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    const newItem = {
-      id: uuid(),
-      titre: this.state.title,
-      tache: this.state.content,
-      complete: "true/false",
-    };
-    console.log(newItem);
+    if(this.state.cardsItemsCount <= 3) {
 
-    this.setCards(prev => [...prev, newItem]);
+      const newItem = {
+        id: uuid(),
+        titre: this.state.title,
+        tache: this.state.content,
+        complete: "true/false",
+      };
+      this.setCards(prev => [...prev, newItem]);
+      this.setState({cardsItemsCount : this.state.cardsItemsCount +1}) 
+    }
   };
 
   removeItem(index) {
@@ -42,7 +59,9 @@ export default class FormTache extends React.Component {
       return tacheIndex !== index
     })
     this.setState({taches})
+    
   }
+
 
   handleDeleteClick(event) {
     event.preventDefault();
@@ -50,6 +69,7 @@ export default class FormTache extends React.Component {
     const index = arrayItem.ndexOf(event.target.value);
     arrayItem.splice(index, 1);
     this.setCards(prev => [...prev, arrayItem ]);
+
   }
 
   render() {
